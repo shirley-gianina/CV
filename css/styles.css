@@ -1,0 +1,815 @@
+:root {
+  --color-primary: #cd853f;
+  --color-secondary: #f4ece6;
+  --white: #fff;
+  --black: #000;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body,
+html {
+  box-sizing: border-box;
+  background-color: var(--white);
+  font-size: 16px;
+  line-height: 1.5;
+}
+
+a {
+  text-decoration: none;
+}
+
+/* body::after {
+  content: "";
+  margin: 100px;
+} */
+
+.container {
+  width: 90%;
+  max-width: 1440px;
+  margin: auto;
+}
+
+.btn {
+  display: inline-block;
+  align-items: center;
+  justify-content: center;
+  padding: 5px 30px;
+  text-decoration: none;
+  text-transform: uppercase;
+  color: var(--black);
+  border: 1px solid var(--black);
+  border-radius: 50px;
+  font-family: "Lato", sans-serif;
+  letter-spacing: 2px;
+}
+
+.btn-primary {
+  background-color: var(--color-primary);
+  color: var(--white);
+  border-color: transparent;
+}
+
+.btn-primary:hover {
+  background-color: var(--white);
+  color: var(--color-primary);
+  border-color: var(--color-primary);
+}
+
+.btn-default:hover {
+  background-color: var(--color-primary);
+  color: var(--white);
+  border-color: transparent;
+}
+
+nav {
+  position: fixed;
+  top: 0;
+  right: 0;
+  left: 0;
+  z-index: 2;
+  background-color: var(--white);
+}
+
+nav .menu {
+  display: flex;
+  height: 130px;
+  justify-content: space-between;
+  align-items: center;
+}
+
+nav .menu .title {
+  display: flex;
+}
+
+nav .menu .title a {
+  font-family: "Poppins", sans-serif;
+  text-decoration: none;
+  font-weight: bold;
+  line-height: 1em;
+  color: var(--black);
+  font-size: 1.4rem;
+}
+
+nav .menu .title a::before {
+  content: "";
+  display: inline-block;
+  background-color: var(--color-primary);
+  margin-top: 4px;
+  margin-right: 10px;
+  width: 16px;
+  height: 16px;
+}
+
+nav .menu .title p {
+  text-transform: uppercase;
+  font-family: "Lato", sans-serif;
+  font-weight: 300;
+  padding-left: 12px;
+}
+
+nav .menu .title p::before {
+  content: "/";
+  line-height: 1.5em;
+  margin: 0;
+  margin-right: 10px;
+}
+
+nav .menu .links ul {
+  display: flex;
+  list-style: none;
+}
+
+nav .menu .links ul li {
+  list-style: none;
+}
+
+nav .menu .links ul li a {
+  font-family: "Lato", sans-serif;
+  font-weight: 300;
+  text-decoration: none;
+  text-transform: uppercase;
+  color: var(--black);
+  margin-left: 30px;
+}
+
+nav .menu .links ul li a:hover,
+nav .menu .links ul li a.active {
+  color: var(--color-primary);
+  font-weight: bold;
+}
+
+header .about-me {
+  position: relative;
+  height: 850px;
+  height: calc(100vh + 130px - 100px);
+}
+
+header .about-me:before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  width: 40%;
+  background-color: var(--color-primary);
+}
+
+header .about-me .center {
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  top: 0;
+  left: 5%;
+  right: 0;
+  bottom: 0;
+}
+
+header .about-me .card {
+  display: flex;
+}
+
+header .about-me .card .profile {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  text-align: center;
+  width: 400px;
+  box-shadow: -10px 10px 10px rgba(0, 0, 0, 0.2);
+  background-color: #f4ece6;
+}
+
+header .about-me .card .profile > div:not(.social-links) {
+  user-select: none;
+}
+
+header .about-me .card .profile img {
+  width: 205px;
+  height: 205px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin: 30px 0px 10px 0px;
+}
+
+header .about-me .card .profile h1 {
+  font-family: "Poppins", sans-serif;
+  font-size: 1.8rem;
+  text-align: center;
+  white-space: pre-line;
+}
+
+header .about-me .card .profile h1::after {
+  content: "";
+  margin: 0 auto;
+  margin-top: 25px;
+  background-color: var(--color-primary);
+  width: 50px;
+  height: 3px;
+  display: block;
+}
+
+header .about-me .card .profile p {
+  text-align: center;
+  margin: 30px 0px;
+  font-family: "Lato", sans-serif;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  font-weight: 300;
+  font-size: 1rem;
+}
+
+header .about-me .card .profile .social-links {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  background-color: var(--white);
+  height: 50px;
+}
+
+header .about-me .card .profile .social-links a {
+  color: var(--black);
+  width: 45px;
+  font-size: 1.7rem;
+  text-align: left;
+}
+
+header .about-me .card .content {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 430px;
+  padding: 10px 35px;
+  box-sizing: border-box;
+}
+
+header .about-me .card .content .title {
+  font-size: 5rem;
+  text-transform: capitalize;
+  font-family: "Poppins", sans-serif;
+  font-weight: bold;
+}
+
+header .about-me .card .content .subtitle {
+  font-size: 1.4rem;
+  font-weight: bold;
+  font-family: "Lato", sans-serif;
+}
+
+header .about-me .card .content p {
+  font-family: "Lato", sans-serif;
+  letter-spacing: 1px;
+  font-weight: 300;
+}
+
+#resume {
+  background-color: var(--color-secondary);
+  padding-bottom: 200px;
+}
+
+#resume .container {
+  max-width: 800px;
+}
+
+#resume h3::before {
+  content: "";
+  background-color: var(--color-primary);
+  margin-top: 4px;
+  margin-right: 10px;
+  width: 20px;
+  height: 20px;
+  line-height: 35px;
+  display: inline-block;
+}
+
+#resume h3 {
+  font-family: "Poppins", sans-serif;
+  text-transform: capitalize;
+  text-align: center;
+  padding-top: 230px;
+  font-size: 2rem;
+}
+
+#resume .education .education-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 250px;
+}
+
+#resume .education h4 {
+  font-family: "Poppins", sans-serif;
+  font-size: 1.8rem;
+  text-transform: capitalize;
+}
+
+#resume .education .card {
+  background-color: var(--white);
+  width: 100%;
+  height: 400px;
+  box-shadow: -10px 10px 10px rgba(0, 0, 0, 0.2);
+  padding: 70px;
+  box-sizing: border-box;
+  margin-bottom: 50px;
+}
+
+#resume .education .card > p {
+  font-family: "Poppins", sans-serif;
+  color: var(--color-primary);
+  font-size: 1.2rem;
+  font-weight: bold;
+}
+
+#resume .education .card .content {
+  display: flex;
+  margin-top: 20px;
+  width: 100%;
+}
+
+#resume .education .card .content .titles {
+  width: 45%;
+}
+
+#resume .education .card .content .titles p {
+  margin-bottom: 5px;
+}
+
+#resume .education .card .content .titles p:nth-child(1) {
+  font-family: "Poppins", sans-serif;
+  font-size: 1.4rem;
+  text-transform: capitalize;
+  font-weight: 300;
+}
+
+#resume .education .card .content .titles p:nth-child(2) {
+  font-family: "Lato", sans-serif;
+  text-transform: capitalize;
+  font-weight: 300;
+}
+
+#resume .education .card .content .titles p:nth-child(3) {
+  font-family: "Lato", sans-serif;
+  text-transform: capitalize;
+  font-weight: 300;
+}
+
+#resume .education .card .content .description {
+  width: 55%;
+}
+
+#resume .education .card .content .description p {
+  font-family: "Lato", sans-serif;
+  color: var(--black);
+  line-height: 1.8;
+  letter-spacing: 0.5px;
+  word-spacing: 1px;
+}
+
+#resume .education .card .content .description p:first-child {
+  margin-bottom: 30px;
+}
+
+#projects {
+  background-color: var(--color-secondary);
+  padding-bottom: 200px;
+}
+
+#projects .container {
+  max-width: 1000px;
+}
+
+#projects h3::before {
+  content: "";
+  background-color: var(--color-primary);
+  margin-top: 4px;
+  margin-right: 10px;
+  width: 20px;
+  height: 20px;
+  line-height: 35px;
+  display: inline-block;
+}
+
+#projects .top h3 {
+  font-family: "Poppins", sans-serif;
+  text-transform: capitalize;
+  text-align: center;
+  padding-top: 230px;
+  font-size: 2rem;
+  margin-bottom: 70px;
+}
+
+#projects .top p {
+  padding: 0px 60px;
+  text-align: center;
+  margin-bottom: 70px;
+  font-family: "Lato", sans-serif;
+  color: var(--black);
+  line-height: 1.8;
+  letter-spacing: 0.5px;
+  word-spacing: 1px;
+}
+
+#projects .card {
+  display: block;
+  box-sizing: border-box;
+  margin-bottom: 70px;
+  box-shadow: -10px 10px 10px rgba(0, 0, 0, 0.2);
+}
+
+#projects .card .content {
+  background-color: var(--white);
+  display: flex;
+  height: 400px;
+}
+
+#projects .card .content::before {
+  content: "";
+  position: relative;
+  top: 100px;
+  left: 0;
+  border-left: 12px solid var(--color-primary);
+  height: 55px;
+  display: block;
+}
+
+#projects .card .content .description .titles p:first-child {
+  font-family: "Poppins", sans-serif;
+  text-transform: capitalize;
+  color: var(--color-primary);
+  font-size: 1.2rem;
+  font-weight: bold;
+}
+
+#projects .card .content .description .titles p:last-child {
+  font-family: "Poppins", sans-serif;
+  text-transform: capitalize;
+  color: var(--black);
+  font-size: 0.7rem;
+  font-weight: bold;
+  /* font-weight: 700; */
+}
+
+#projects .card .content > div p {
+  font-family: "Lato", sans-serif;
+  color: var(--black);
+  line-height: 1.8;
+  letter-spacing: 0.5px;
+  word-spacing: 1px;
+}
+
+#projects .card .content .description {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  width: 55%;
+  padding: 75px 20px;
+}
+
+#projects .card .content .image {
+  overflow: hidden;
+  width: 45%;
+}
+
+#projects .card .content .image img {
+  width: 100%;
+}
+
+footer {
+  position: fixed;
+  text-align: center;
+  width: 100%;
+  height: 100px;
+  background-color: var(--white);
+  bottom: 0;
+}
+
+footer .info {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 20px 0px;
+}
+
+footer .contact {
+  display: flex;
+  grid-gap: 30px;
+}
+
+footer .contact .contact-info {
+  display: flex;
+  grid-gap: 30px;
+}
+
+
+footer .contact p {
+  font-family: "Poppins", sans-serif;
+  text-transform: capitalize;
+  font-weight: bold;
+}
+
+footer .contact .social {
+  display: flex;
+}
+
+footer .contact .social a {
+  color: var(--black);
+  width: 45px;
+}
+
+@media only screen and (min-width: 900px) {
+  .hide-lg {
+    display: none !important;
+  }
+}
+
+@media only screen and (max-width: 900px) {
+
+  body,
+  html {
+    font-size: 13px;
+    line-height: 1.5;
+  }
+  .hide-sm {
+    display: none !important;
+  }
+
+  nav {
+    position: static;
+  }
+
+  nav .menu {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  nav .menu .open-menu {
+    font-size: 30px;
+    user-select: none;
+    cursor: pointer;
+  }
+
+  nav .menu .title {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 0;
+  }
+
+  nav .menu .title a {
+    line-height: 1em;
+    font-size: 20px;
+  }
+
+  nav .menu .title a::before {
+    margin-right: 10px;
+    width: 13px;
+    height: 13px;
+  }
+
+  nav .menu .title p {
+    padding-left: 0px;
+    font-size: 14px;
+  }
+
+  nav .menu .title p::before {
+    display: none;
+  }
+
+  nav .menu .links {
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    padding-top: 50px;
+    background-color: var(--color-secondary);
+    position: fixed;
+    top: 0;
+    right: 0;
+    left: 0;
+    bottom: 0;
+    z-index: 2;
+  }
+
+  nav .menu .links ul {
+    display: block;
+    justify-content: center;
+    align-items: center;
+  }
+
+  nav .menu .links ul li {
+    line-height: 3;
+  }
+
+  nav .menu .links ul li a {
+    margin-left: 0;
+  }
+
+  nav .menu .close-menu {
+    font-family: "Lato", sans-serif;
+    position: absolute;
+    top: 10px;
+    right: 20px;
+    font-size: 25px;
+    user-select: none;
+    cursor: pointer;
+  }
+
+  header .about-me {
+    position: relative;
+    height: auto;
+  }
+
+  header .about-me:before {
+    position: absolute;
+    top: 20%;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    background-color: var(--color-primary);
+    z-index: 0;
+  }
+
+  header .about-me .center {
+    position: static;
+    align-items: flex-start;
+    left: 0;
+  }
+
+  header .about-me .card {
+    display: block;
+    z-index: 1;
+  }
+
+  header .about-me .card .profile {
+    width: 90%;
+    max-width: 350px;
+    margin: 0 auto;
+  }
+
+  header .about-me .card .profile img {
+    width: 105px;
+    height: 105px;
+  }
+
+  header .about-me .card .profile p {
+    display: none;
+  }
+
+  header .about-me .card .profile .btn {
+    margin-top: 30px;
+    padding: 5px 20px;
+    letter-spacing: 1.2px;
+    margin-bottom: 30px;
+  }
+
+  header .about-me .card .profile .social-links {
+    height: 40px;
+  }
+
+  header .about-me .card .profile .social-links a {
+    text-align: center;
+  }
+
+  header .about-me .card .content {
+    width: 100%;
+    min-height: 375px;
+  }
+
+  #resume {
+    padding-bottom: 50px;
+  }
+
+  #resume .container {
+    max-width: 350px;
+  }
+
+  #resume h3 {
+    padding-top: 150px;
+  }
+
+  #resume .education .education-top {
+    height: 150px;
+  }
+
+  #resume .education .card {
+    width: 100%;
+    height: auto;
+    /* padding: 70px; */
+  }
+
+  #resume .education .card .content {
+    flex-direction: column;
+    width: 100%;
+  }
+
+  #resume .education .card .content .titles {
+    width: 100%;
+    margin-bottom: 20px;
+  }
+
+  #resume .education .card .content .description {
+    width: 100%;
+  }
+
+  #projects .container {
+    width: 80%;
+    max-width: 600px;
+  }
+
+  #projects .top h3 {
+    padding-top: 50px;
+    margin-bottom: 30px;
+  }
+
+  #projects .top p {
+    padding: 0;
+  }
+
+  #projects .card .content {
+    display: flex;
+    flex-direction: column;
+    height: auto;
+  }
+
+  #projects .card .content::before {
+    top: 65px;
+    border-left: 8px solid var(--color-primary);
+    height: 40px;
+  }
+
+  #projects .card .content .description {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    width: auto;
+    padding: 20px;
+  }
+  #projects .card .content .description .titles {
+    margin-bottom: 20px;
+  }
+
+  #projects .card .content .image {
+    max-height: 350px;
+    overflow: hidden;
+    width: auto;
+  }
+
+  #projects .card .content .image img {
+    height: auto;
+  }
+
+  footer {
+    position: static;
+    height: auto;
+    text-align: left;
+
+  }
+  
+  footer .info {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    padding: 20px 0px;
+  }
+
+  footer .info p {
+    margin-top: 20px;
+    order: 2;
+    margin-right: auto;
+  }
+  
+  footer .contact {
+    display: flex;
+    flex-direction: column;
+    grid-gap: 0px;
+    width: 100%;
+  }
+  
+  footer .contact p {
+    font-family: "Poppins", sans-serif;
+    text-transform: capitalize;
+    font-weight: bold;
+    margin-bottom: 15px;
+  }
+
+  footer .contact .social {
+    display: flex;
+    justify-content: flex-start;
+  }
+  
+  footer .contact .social a {
+    margin-top: 0px;
+    font-size: 20px;
+  }
+}
+
+@media print {
+  nav {
+    display: none !important;
+  }
+}

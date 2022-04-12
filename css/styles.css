@@ -241,7 +241,7 @@ header .about-me .card .profile .social-links a {
 header .about-me .card .content {
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
+  justify-content: space-evenly;
   width: 430px;
   padding: 10px 35px;
   box-sizing: border-box;
